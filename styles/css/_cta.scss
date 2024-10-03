@@ -1,0 +1,28 @@
+.cta-section {
+    background-color: #FF7B83;
+    padding: 40px 0;
+    text-align: center;
+    
+    h2 {
+      font-size: 36px;
+      color: #000;
+      margin-bottom: 20px;
+    }
+    
+    .contact-btn {
+      display: inline-block;
+      padding: 10px 25px;
+      border: 2px solid #000;
+      color: #000;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 25px;
+      
+  
+      &:hover {
+        background-color: #000;
+        color: #fff;
+      }
+    }
+  }
+  

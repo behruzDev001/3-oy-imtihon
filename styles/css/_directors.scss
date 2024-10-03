@@ -1,0 +1,135 @@
+// .directors {
+//     background-color: #013a43;
+//     padding: 50px 0;
+  
+
+//     .main_btn{
+//         width: 50px;
+//         height: 50px;
+//         border-radius: 30px;
+//         background-color: rgb(230, 58, 58);
+//         font-size: 40px;
+//         list-style-type: none;
+//         border: none;
+//         margin-top: 90px;
+//       }
+//     .container {
+//       text-align: center;
+//       h2 {
+//         font-size: 36px;
+//         color: #fff;
+//       }
+  
+//       .director-card {
+//         width: 300px;
+//         height: 300px;
+//         display: inline-block;
+//         background-color: #064d58;
+//         padding: 20px;
+//         margin: 20px;
+//         text-align: center;
+        
+//         img {
+//           width: 100px;
+//           border-radius: 50%;
+//         }
+  
+//         h3 {
+//           margin: 10px 0;
+//           color: #fff;
+//           font-size: 24px;
+//         }
+  
+//         p {
+//           color: #c1d3d4;
+//           font-size: 14px;
+//         }
+//       }
+//       .button{
+//         background-color: #fff;
+//         color: #013a43;
+//         padding: 10px 20px;
+//         border: none;
+//         cursor: pointer;
+//       }
+
+//     }
+    
+//   }
+
+
+
+// Mixinlar
+@mixin border-radius($radius) {
+    border-radius: $radius;
+  }
+  
+  @mixin btn-styles($bg-color, $text-color, $padding) {
+    background-color: $bg-color;
+    color: $text-color;
+    padding: $padding;
+    border: none;
+    cursor: pointer;
+  }
+  
+  @mixin text-styles($color, $font-size) {
+    color: $color;
+    font-size: $font-size;
+  }
+  
+  @mixin card-size($width, $height) {
+    width: $width;
+    height: $height;
+  }
+  
+  .directors {
+    background-color: #013a43;
+    padding: 50px 0;
+  
+    .main_btn {
+      width: 50px;
+      height: 50px;
+      @include border-radius(30px);
+      background-color: rgb(230, 58, 58);
+      font-size: 40px;
+      list-style-type: none;
+      border: none;
+      margin-top: 90px;
+    }
+  
+    .container {
+      text-align: center;
+  
+      h2 {
+        @include text-styles(#fff, 36px);
+      }
+  
+      .director-card {
+        @include card-size(300px, 300px);
+        display: inline-block;
+        background-color: #064d58;
+        padding: 20px;
+        margin: 20px;
+        text-align: center;
+  
+        img {
+          width: 100px;
+          @include border-radius(50%);
+        }
+  
+        h3 {
+          margin: 10px 0;
+          @include text-styles(#fff, 24px);
+        }
+  
+        p {
+          @include text-styles(#c1d3d4, 14px);
+        }
+      }
+  
+      .button {
+        @include btn-styles(#fff, #013a43, 10px 20px);
+      }
+    }
+  }
+  

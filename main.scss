@@ -1,0 +1,181 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@import "./styles/css/about";
+@import "./styles/css/cta";
+@import "./styles/css/footer";
+@import "./styles/css/responsive";
+@import "./styles/css/responsive_main";
+
+
+@import "./styles/css/about";
+@import "./styles/css/directors";
+@import "./styles/css/header.scss";
+@import "./styles/css/clients-section.scss";
+
+
+
+/* Base styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #00324e;
+    position: relative;
+}
+
+.logo {
+    font-size: 24px;
+    color: white;
+}
+
+/* Desktop Navigation */
+.desktop-nav {
+    display: flex;
+}
+
+.desktop-nav ul {
+    display: flex;
+    list-style: none;
+    margin-top: 20px;
+}
+
+.desktop-nav ul li {
+    margin-left: 20px;
+    margin-top: -10px;
+}
+
+.desktop-nav ul li a {
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.menu-checkbox {
+    display: none;
+}
+
+/* Hamburger Icon - Hide by default (visible on mobile) */
+.menu-icon {
+    display: none; /* Hide on larger screens */
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 24px;
+    width: 30px;
+}
+
+.hamburger {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    transition: all 0.3s;
+}
+
+/* Mobile Navigation Menu */
+.mobile-nav {
+    position: fixed;
+    left: -100%;
+    top: 0;
+    width: 75%;
+    height: 100vh;
+    background-color: #00324e;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s ease-in-out;
+    z-index: 1000;
+}
+
+.mobile-nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.mobile-nav ul li {
+    margin: 20px 0;
+}
+
+.mobile-nav ul li a {
+    color: white;
+    font-size: 22px;
+    text-decoration: none;
+    margin-top: 50px;
+}
+
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Show Mobile Navigation when the checkbox is checked */
+.menu-checkbox:checked ~ .mobile-nav {
+    left: 0;
+}
+
+/* Hamburger Animation */
+.menu-checkbox:checked ~ .menu-icon .hamburger:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-checkbox:checked ~ .menu-icon .hamburger:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-checkbox:checked ~ .menu-icon .hamburger:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Responsive Styling for 400px */
+@media screen and (max-width: 400px) {
+    /* Hide desktop navigation on mobile */
+    .desktop-nav {
+        display: none;
+    }
+
+    /* Show the hamburger icon on small screens */
+    .menu-icon {
+        display: flex;
+    }
+
+    header {
+        padding: 10px 15px;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .hamburger {
+        width: 25px;
+        height: 2px;
+    }
+
+    .mobile-nav {
+        width: 85%;
+    }
+
+    .mobile-nav ul li a {
+        font-size: 18px;
+    }
+
+    .close-btn {
+        font-size: 28px;
+    }
+}
+
+/* Hide mobile menu and hamburger icon on larger screens */
+@media screen and (min-width: 401px) {
+    .mobile-nav {
+        display: none;
+    }
+}

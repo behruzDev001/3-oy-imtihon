@@ -1,0 +1,24 @@
+.clients-section {
+    background-color: #00384D;
+    padding: 50px 0;
+    text-align: center;
+  
+    
+    h2 {
+      font-size: 36px;
+      color: #fff;
+      margin-bottom: 30px;
+    }
+    
+    .clients-logos {
+      display: flex;
+      justify-content: center;
+      gap: 100px;
+      img {
+        max-width: 100px;
+    
+       
+      }
+    }
+  }
+  

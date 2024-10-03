@@ -1,0 +1,116 @@
+// header {
+//     background-color: #033a43;
+//     padding: 20px 0;
+    
+//     .container {
+//       display: flex;
+//       justify-content: space-around;
+//       align-items: center;
+//     }
+  
+//     .logo {
+//       font-size: 24px;
+//       color: #fff;
+//     }
+  
+//     nav ul {
+//       list-style: none;
+//       display: flex;
+//       gap: 40px;
+    
+      
+//       li {
+//         margin-top: 10px;
+//         a {
+//           text-decoration: none;
+//           color: #fff;
+//           font-size: 16px;
+//           padding-top: 15px;
+//         }
+//       }
+//       .main_contact{
+//     width: 110px;
+//     height: 40px;
+//     border-radius: 30px;
+//     border: none;
+//     border: 2px solid white;
+//     color: rgb(255, 255, 255);
+//     background-color: #014e56;
+//     cursor: pointer;
+//     margin-bottom: 10px;
+//       }
+//       .main_contact:hover{
+//         background-color: white;
+//         color:#014e56 ;
+//       }
+//     }
+//   }
+
+
+
+
+// Mixinlar
+@mixin flex-container($justify-content, $align-items) {
+    display: flex;
+    justify-content: $justify-content;
+    align-items: $align-items;
+  }
+  
+  @mixin text-styles($color, $font-size) {
+    color: $color;
+    font-size: $font-size;
+  }
+  
+  @mixin btn-styles($bg-color, $text-color, $width, $height, $radius) {
+    background-color: $bg-color;
+    color: $text-color;
+    width: $width;
+    height: $height;
+    @include border-radius($radius);
+    border: 2px solid $text-color;
+    cursor: pointer;
+  }
+  
+  @mixin border-radius($radius) {
+    border-radius: $radius;
+  }
+  
+  // Header bo'limi SCSS
+  header {
+    background-color: #033a43;
+    padding: 20px 0;
+  
+    .container {
+      @include flex-container(space-around, center);
+    }
+  
+    .logo {
+      @include text-styles(#fff, 24px);
+    }
+  
+    nav ul {
+      list-style: none;
+      @include flex-container(flex-start, center);
+      gap: 40px;
+  
+      li {
+        margin-top: 10px;
+  
+        a {
+          text-decoration: none;
+          @include text-styles(#fff, 16px);
+          padding-top: 15px;
+        }
+      }
+  
+      .main_contact {
+        @include btn-styles(#014e56, #fff, 110px, 40px, 30px);
+        margin-bottom: 10px;
+      }
+  
+      .main_contact:hover {
+        @include btn-styles(#fff, #014e56, 110px, 40px, 30px);
+      }
+    }
+  }
+  

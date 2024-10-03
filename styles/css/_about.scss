@@ -1,0 +1,135 @@
+// .about {
+//     background-color: #0a4b57;
+//     padding-left: 90px;
+//     padding-top: 20px;
+  
+//     .container {
+//       display: flex;
+//       padding-left: 100px;
+//       h1 {
+//         font-size: 48px;
+//         color: #fff;
+//         padding-left: 90px;
+//         padding-top: 20px;
+       
+//       }
+  
+//       p {
+//         color: #c1d3d4;
+//         max-width: 600px;
+//         margin: 20px auto;
+//         font-size: 18px;
+//         padding-left: 50px;
+//         padding-top: 20px;
+//       }
+//     }
+//   }
+
+
+
+
+
+
+// @media (max-width: 400px) {
+//     .about {
+//       padding-left: 10px;
+//       padding-right: 10px;
+  
+//       .container {
+//         padding-left: 0;
+//         padding-right: 0;
+//         flex-direction: column;
+//         text-align: center;
+  
+//         h1 {
+//           font-size: 28px;
+//           padding: 10px 0;
+//         }
+  
+//         p {
+//           padding-left: 0;
+//           padding-right: 0;
+//           font-size: 14px;  // Matn o'lchamini kichraytiramiz
+//           line-height: 1.5; // Matn satr oraliqlarini oshiramiz
+//           max-width: 100%;
+//           margin: 10px 0;
+//         }
+//       }
+//     }
+//   }
+  
+
+
+// @mixin about-style($bg-color, $padding-left, $padding-top) {
+//     background-color: $bg-color;
+//     padding-left: $padding-left;
+//     padding-top: $padding-top;
+//   }
+  
+//   @mixin container-style($padding-left) {
+//     display: flex;
+//     padding-left: $padding-left;
+//   }
+  
+//   @mixin text-style($font-size, $color, $max-width, $margin, $padding-left, $padding-top) {
+//     font-size: $font-size;
+//     color: $color;
+//     max-width: $max-width;
+//     margin: $margin;
+//     padding-left: $padding-left;
+//     padding-top: $padding-top;
+//   }
+  
+//   .about {
+//     @include about-style(#0a4b57, 90px, 20px);
+  
+//     .container {
+//       @include container-style(100px);
+  
+//       h1 {
+//         @include text-style(48px, #fff, auto, auto, 90px, 20px);
+//       }
+  
+//       p {
+//         @include text-style(18px, #c1d3d4, 600px, 20px auto, 50px, 20px);
+//       }
+//     }
+//   }
+  
+
+
+
+// Define mixins for typography and layout
+@mixin text-style($font-size, $line-height, $font-weight, $color) {
+    font-size: $font-size;
+    line-height: $line-height;
+    font-weight: $font-weight;
+    color: $color;
+  }
+  
+  @mixin container-padding($padding) {
+    padding: $padding;
+  }
+  
+  // Applying styles for the 'About' section
+  .about-section {
+    text-align: center;
+    background-color: #003c47;
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  
+    h1 {
+      @include text-style(2rem, 1.2, bold, white);
+      margin-bottom: 1.5rem;
+    }
+  
+    p {
+      @include text-style(1rem, 1.6, normal, white);
+      max-width: 500px;
+      @include container-padding(0 20px);
+    }
+  }
+  

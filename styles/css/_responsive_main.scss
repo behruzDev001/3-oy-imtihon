@@ -1,0 +1,13 @@
+@media (max-width: 400px){
+    .container{
+      h1{
+        margin-bottom: 20px;
+        transform: translate(-100px);
+      }
+      p{
+        flex-direction: column;
+        transform: translate(-300px);
+      }
+    }
+  }
+  
